@@ -72,8 +72,9 @@ $gatewayUrl = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVe
 
 // parse query string
 $query = array();
+if (array_key_exists('first', $_SERVER)) {
 parse_str($_SERVER['QUERY_STRING'], $query);
-
+}
 // build auth headers
 $headers = array(
     'Content-type: application/json',
